@@ -11,6 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # see
+    # https://github.com/actions/virtual-environments/issues/3316
     - name: Setup path
       shell: cmd
       run: |
