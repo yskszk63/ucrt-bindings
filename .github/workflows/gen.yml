@@ -11,6 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup path
+      shell: cmd
+      run: |
+        echo "C:\msys64\mingw64\bin" >> $GITHUB_PATH
+
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
@@ -24,7 +29,9 @@ jobs:
         args: bindgen
 
     - name: Generate
+      shell: cmd
       run: |
+        set PATH=C:\msys64\mingw64\bin;%PATH%
         bindgen ./header.h -o binding.rs
 
     - uses: peaceiris/actions-gh-pages@v3
