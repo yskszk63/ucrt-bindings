@@ -1,0 +1,34 @@
+name: gen
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        profile: minimal
+
+    - name: Install bindgen
+      uses: actions-rs/cargo@v1
+      with:
+        command: install
+        args: bindgen
+
+    - name: Generate
+      run: |
+        bindgen ./header.h -o binding.rs
+
+    - uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+# vim: set ts=2 sts=2 sw=2:
