@@ -105,6 +105,33 @@ pub const _ALLOCA_S_THRESHOLD: u32 = 1024;
 pub const _ALLOCA_S_STACK_MARKER: u32 = 52428;
 pub const _ALLOCA_S_HEAP_MARKER: u32 = 56797;
 pub const _ALLOCA_S_MARKER_SIZE: u32 = 16;
+pub const _NLSCMPERROR: u32 = 2147483647;
+pub const _A_NORMAL: u32 = 0;
+pub const _A_RDONLY: u32 = 1;
+pub const _A_HIDDEN: u32 = 2;
+pub const _A_SYSTEM: u32 = 4;
+pub const _A_SUBDIR: u32 = 16;
+pub const _A_ARCH: u32 = 32;
+pub const F_OK: u32 = 0;
+pub const X_OK: u32 = 1;
+pub const W_OK: u32 = 2;
+pub const R_OK: u32 = 4;
+pub const _P_WAIT: u32 = 0;
+pub const _P_NOWAIT: u32 = 1;
+pub const _OLD_P_OVERLAY: u32 = 2;
+pub const _P_NOWAITO: u32 = 3;
+pub const _P_DETACH: u32 = 4;
+pub const _P_OVERLAY: u32 = 2;
+pub const _WAIT_CHILD: u32 = 0;
+pub const _WAIT_GRANDCHILD: u32 = 1;
+pub const P_WAIT: u32 = 0;
+pub const P_NOWAIT: u32 = 1;
+pub const P_OVERLAY: u32 = 2;
+pub const OLD_P_OVERLAY: u32 = 2;
+pub const P_NOWAITO: u32 = 3;
+pub const P_DETACH: u32 = 4;
+pub const WAIT_CHILD: u32 = 0;
+pub const WAIT_GRANDCHILD: u32 = 1;
 pub type __gnuc_va_list = __builtin_va_list;
 pub type va_list = __gnuc_va_list;
 extern "C" {
@@ -2199,6 +2226,2550 @@ extern "C" {
 }
 extern "C" {
     pub fn _get_heap_handle() -> isize;
+}
+extern "C" {
+    pub fn _memccpy(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Src: *const ::std::os::raw::c_void,
+        _Val: ::std::os::raw::c_int,
+        _MaxCount: size_t,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn memchr(
+        _Buf: *const ::std::os::raw::c_void,
+        _Val: ::std::os::raw::c_int,
+        _MaxCount: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn _memicmp(
+        _Buf1: *const ::std::os::raw::c_void,
+        _Buf2: *const ::std::os::raw::c_void,
+        _Size: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _memicmp_l(
+        _Buf1: *const ::std::os::raw::c_void,
+        _Buf2: *const ::std::os::raw::c_void,
+        _Size: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn memcmp(
+        _Buf1: *const ::std::os::raw::c_void,
+        _Buf2: *const ::std::os::raw::c_void,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn memcpy(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Src: *const ::std::os::raw::c_void,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn memcpy_s(
+        _dest: *mut ::std::os::raw::c_void,
+        _numberOfElements: size_t,
+        _src: *const ::std::os::raw::c_void,
+        _count: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn mempcpy(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Src: *const ::std::os::raw::c_void,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn memset(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Val: ::std::os::raw::c_int,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn memccpy(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Src: *const ::std::os::raw::c_void,
+        _Val: ::std::os::raw::c_int,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn memicmp(
+        _Buf1: *const ::std::os::raw::c_void,
+        _Buf2: *const ::std::os::raw::c_void,
+        _Size: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strset(
+        _Str: *mut ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strset_l(
+        _Str: *mut ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+        _Locale: _locale_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strcpy(
+        _Dest: *mut ::std::os::raw::c_char,
+        _Source: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strcat(
+        _Dest: *mut ::std::os::raw::c_char,
+        _Source: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strcmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strlen(_Str: *const ::std::os::raw::c_char) -> ::std::os::raw::c_ulonglong;
+}
+extern "C" {
+    pub fn strnlen(_Str: *const ::std::os::raw::c_char, _MaxCount: size_t) -> size_t;
+}
+extern "C" {
+    pub fn memmove(
+        _Dst: *mut ::std::os::raw::c_void,
+        _Src: *const ::std::os::raw::c_void,
+        _Size: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_void;
+}
+extern "C" {
+    pub fn _strdup(_Src: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strchr(
+        _Str: *const ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _stricmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strcmpi(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _stricmp_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strcoll(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strcoll_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _stricoll(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _stricoll_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strncoll(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strncoll_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strnicoll(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strnicoll_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strcspn(
+        _Str: *const ::std::os::raw::c_char,
+        _Control: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_ulonglong;
+}
+extern "C" {
+    pub fn _strerror(_ErrMsg: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strerror(arg1: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strlwr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strlwr_l(
+        _String: *mut ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strncat(
+        _Dest: *mut ::std::os::raw::c_char,
+        _Source: *const ::std::os::raw::c_char,
+        _Count: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strncmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: ::std::os::raw::c_ulonglong,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strnicmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strnicmp_l(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strncpy(
+        _Dest: *mut ::std::os::raw::c_char,
+        _Source: *const ::std::os::raw::c_char,
+        _Count: ::std::os::raw::c_ulonglong,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strnset(
+        _Str: *mut ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+        _MaxCount: size_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strnset_l(
+        str_: *mut ::std::os::raw::c_char,
+        c: ::std::os::raw::c_int,
+        count: size_t,
+        _Locale: _locale_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strpbrk(
+        _Str: *const ::std::os::raw::c_char,
+        _Control: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strrchr(
+        _Str: *const ::std::os::raw::c_char,
+        _Ch: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strrev(_Str: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strspn(
+        _Str: *const ::std::os::raw::c_char,
+        _Control: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_ulonglong;
+}
+extern "C" {
+    pub fn strstr(
+        _Str: *const ::std::os::raw::c_char,
+        _SubStr: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strtok(
+        _Str: *mut ::std::os::raw::c_char,
+        _Delim: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strtok_r(
+        _Str: *mut ::std::os::raw::c_char,
+        _Delim: *const ::std::os::raw::c_char,
+        __last: *mut *mut ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strupr(_String: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strupr_l(
+        _String: *mut ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strxfrm(
+        _Dst: *mut ::std::os::raw::c_char,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: ::std::os::raw::c_ulonglong,
+    ) -> ::std::os::raw::c_ulonglong;
+}
+extern "C" {
+    pub fn _strxfrm_l(
+        _Dst: *mut ::std::os::raw::c_char,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> size_t;
+}
+extern "C" {
+    pub fn strdup(_Src: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strcmpi(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn stricmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strlwr(_Str: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strnicmp(
+        _Str1: *const ::std::os::raw::c_char,
+        _Str: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strncasecmp(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+        arg3: ::std::os::raw::c_ulonglong,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strcasecmp(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn strnset(
+        _Str: *mut ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+        _MaxCount: size_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strrev(_Str: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strset(
+        _Str: *mut ::std::os::raw::c_char,
+        _Val: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strupr(_Str: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _wcsdup(_Str: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcscat(_Dest: *mut wchar_t, _Source: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcschr(
+        _Str: *const ::std::os::raw::c_ushort,
+        _Ch: ::std::os::raw::c_ushort,
+    ) -> *mut ::std::os::raw::c_ushort;
+}
+extern "C" {
+    pub fn wcscmp(
+        _Str1: *const ::std::os::raw::c_ushort,
+        _Str2: *const ::std::os::raw::c_ushort,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn wcscpy(_Dest: *mut wchar_t, _Source: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcscspn(_Str: *const wchar_t, _Control: *const wchar_t) -> size_t;
+}
+extern "C" {
+    pub fn wcslen(_Str: *const ::std::os::raw::c_ushort) -> ::std::os::raw::c_ulonglong;
+}
+extern "C" {
+    pub fn wcsnlen(_Src: *const wchar_t, _MaxCount: size_t) -> size_t;
+}
+extern "C" {
+    pub fn wcsncat(_Dest: *mut wchar_t, _Source: *const wchar_t, _Count: size_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsncmp(
+        _Str1: *const ::std::os::raw::c_ushort,
+        _Str2: *const ::std::os::raw::c_ushort,
+        _MaxCount: ::std::os::raw::c_ulonglong,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn wcsncpy(_Dest: *mut wchar_t, _Source: *const wchar_t, _Count: size_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsncpy_l(
+        _Dest: *mut wchar_t,
+        _Source: *const wchar_t,
+        _Count: size_t,
+        _Locale: _locale_t,
+    ) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcspbrk(_Str: *const wchar_t, _Control: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsrchr(_Str: *const wchar_t, _Ch: wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsspn(_Str: *const wchar_t, _Control: *const wchar_t) -> size_t;
+}
+extern "C" {
+    pub fn wcsstr(_Str: *const wchar_t, _SubStr: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcstok(_Str: *mut wchar_t, _Delim: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcserror(_ErrNum: ::std::os::raw::c_int) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn __wcserror(_Str: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsicmp(_Str1: *const wchar_t, _Str2: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsicmp_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsnicmp(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsnicmp_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsnset(_Str: *mut wchar_t, _Val: wchar_t, _MaxCount: size_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsrev(_Str: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsset(_Str: *mut wchar_t, _Val: wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcslwr(_String: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcslwr_l(_String: *mut wchar_t, _Locale: _locale_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsupr(_String: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsupr_l(_String: *mut wchar_t, _Locale: _locale_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsxfrm(_Dst: *mut wchar_t, _Src: *const wchar_t, _MaxCount: size_t) -> size_t;
+}
+extern "C" {
+    pub fn _wcsxfrm_l(
+        _Dst: *mut wchar_t,
+        _Src: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> size_t;
+}
+extern "C" {
+    pub fn wcscoll(_Str1: *const wchar_t, _Str2: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcscoll_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsicoll(_Str1: *const wchar_t, _Str2: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsicoll_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsncoll(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsncoll_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsnicoll(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcsnicoll_l(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn wcsdup(_Str: *const wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsicmp(_Str1: *const wchar_t, _Str2: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn wcsnicmp(
+        _Str1: *const wchar_t,
+        _Str2: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn wcsnset(_Str: *mut wchar_t, _Val: wchar_t, _MaxCount: size_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsrev(_Str: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsset(_Str: *mut wchar_t, _Val: wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcslwr(_Str: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsupr(_Str: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn wcsicoll(_Str1: *const wchar_t, _Str2: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _strset_s(
+        _Dst: *mut ::std::os::raw::c_char,
+        _DstSize: size_t,
+        _Value: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strerror_s(
+        _Buf: *mut ::std::os::raw::c_char,
+        _SizeInBytes: size_t,
+        _ErrMsg: *const ::std::os::raw::c_char,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn strerror_s(
+        _Buf: *mut ::std::os::raw::c_char,
+        _SizeInBytes: size_t,
+        _ErrNum: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strlwr_s(_Str: *mut ::std::os::raw::c_char, _Size: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _strlwr_s_l(
+        _Str: *mut ::std::os::raw::c_char,
+        _Size: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strnset_s(
+        _Str: *mut ::std::os::raw::c_char,
+        _Size: size_t,
+        _Val: ::std::os::raw::c_int,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strupr_s(_Str: *mut ::std::os::raw::c_char, _Size: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _strupr_s_l(
+        _Str: *mut ::std::os::raw::c_char,
+        _Size: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn strncat_s(
+        _Dst: *mut ::std::os::raw::c_char,
+        _DstSizeInChars: size_t,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strncat_s_l(
+        _Dst: *mut ::std::os::raw::c_char,
+        _DstSizeInChars: size_t,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn strcpy_s(
+        _Dst: *mut ::std::os::raw::c_char,
+        _SizeInBytes: rsize_t,
+        _Src: *const ::std::os::raw::c_char,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn strncpy_s(
+        _Dst: *mut ::std::os::raw::c_char,
+        _DstSizeInChars: size_t,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _strncpy_s_l(
+        _Dst: *mut ::std::os::raw::c_char,
+        _DstSizeInChars: size_t,
+        _Src: *const ::std::os::raw::c_char,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn strtok_s(
+        _Str: *mut ::std::os::raw::c_char,
+        _Delim: *const ::std::os::raw::c_char,
+        _Context: *mut *mut ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _strtok_s_l(
+        _Str: *mut ::std::os::raw::c_char,
+        _Delim: *const ::std::os::raw::c_char,
+        _Context: *mut *mut ::std::os::raw::c_char,
+        _Locale: _locale_t,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn strcat_s(
+        _Dst: *mut ::std::os::raw::c_char,
+        _SizeInBytes: rsize_t,
+        _Src: *const ::std::os::raw::c_char,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn memmove_s(
+        _dest: *mut ::std::os::raw::c_void,
+        _numberOfElements: size_t,
+        _src: *const ::std::os::raw::c_void,
+        _count: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn wcstok_s(
+        _Str: *mut wchar_t,
+        _Delim: *const wchar_t,
+        _Context: *mut *mut wchar_t,
+    ) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcserror_s(
+        _Buf: *mut wchar_t,
+        _SizeInWords: size_t,
+        _ErrNum: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn __wcserror_s(
+        _Buffer: *mut wchar_t,
+        _SizeInWords: size_t,
+        _ErrMsg: *const wchar_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsnset_s(
+        _Dst: *mut wchar_t,
+        _DstSizeInWords: size_t,
+        _Val: wchar_t,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsset_s(_Str: *mut wchar_t, _SizeInWords: size_t, _Val: wchar_t) -> errno_t;
+}
+extern "C" {
+    pub fn _wcslwr_s(_Str: *mut wchar_t, _SizeInWords: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _wcslwr_s_l(_Str: *mut wchar_t, _SizeInWords: size_t, _Locale: _locale_t) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsupr_s(_Str: *mut wchar_t, _Size: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsupr_s_l(_Str: *mut wchar_t, _Size: size_t, _Locale: _locale_t) -> errno_t;
+}
+extern "C" {
+    pub fn wcscpy_s(_Dst: *mut wchar_t, _SizeInWords: rsize_t, _Src: *const wchar_t) -> errno_t;
+}
+extern "C" {
+    pub fn wcscat_s(_Dst: *mut wchar_t, _SizeInWords: rsize_t, _Src: *const wchar_t) -> errno_t;
+}
+extern "C" {
+    pub fn wcsncat_s(
+        _Dst: *mut wchar_t,
+        _DstSizeInChars: size_t,
+        _Src: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsncat_s_l(
+        _Dst: *mut wchar_t,
+        _DstSizeInChars: size_t,
+        _Src: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn wcsncpy_s(
+        _Dst: *mut wchar_t,
+        _DstSizeInChars: size_t,
+        _Src: *const wchar_t,
+        _MaxCount: size_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsncpy_s_l(
+        _Dst: *mut wchar_t,
+        _DstSizeInChars: size_t,
+        _Src: *const wchar_t,
+        _MaxCount: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcstok_s_l(
+        _Str: *mut wchar_t,
+        _Delim: *const wchar_t,
+        _Context: *mut *mut wchar_t,
+        _Locale: _locale_t,
+    ) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wcsset_s_l(
+        _Str: *mut wchar_t,
+        _SizeInChars: size_t,
+        _Val: ::std::os::raw::c_uint,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wcsnset_s_l(
+        _Str: *mut wchar_t,
+        _SizeInChars: size_t,
+        _Val: ::std::os::raw::c_uint,
+        _Count: size_t,
+        _Locale: _locale_t,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _getcwd(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+pub type _fsize_t = ::std::os::raw::c_ulong;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _finddata32_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time32_t,
+    pub time_access: __time32_t,
+    pub time_write: __time32_t,
+    pub size: _fsize_t,
+    pub name: [::std::os::raw::c_char; 260usize],
+}
+#[test]
+fn bindgen_test_layout__finddata32_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_finddata32_t>(),
+        280usize,
+        concat!("Size of: ", stringify!(_finddata32_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_finddata32_t>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_finddata32_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).time_create as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).time_access as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).time_write as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).size as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32_t>())).name as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _finddata32i64_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time32_t,
+    pub time_access: __time32_t,
+    pub time_write: __time32_t,
+    pub size: ::std::os::raw::c_longlong,
+    pub name: [::std::os::raw::c_char; 260usize],
+}
+#[test]
+fn bindgen_test_layout__finddata32i64_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_finddata32i64_t>(),
+        288usize,
+        concat!("Size of: ", stringify!(_finddata32i64_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_finddata32i64_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_finddata32i64_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).time_create as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).time_access as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).time_write as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).size as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata32i64_t>())).name as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata32i64_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _finddata64i32_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time64_t,
+    pub time_access: __time64_t,
+    pub time_write: __time64_t,
+    pub size: _fsize_t,
+    pub name: [::std::os::raw::c_char; 260usize],
+}
+#[test]
+fn bindgen_test_layout__finddata64i32_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_finddata64i32_t>(),
+        296usize,
+        concat!("Size of: ", stringify!(_finddata64i32_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_finddata64i32_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_finddata64i32_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).time_create as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).time_access as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).time_write as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).size as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_finddata64i32_t>())).name as *const _ as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_finddata64i32_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct __finddata64_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time64_t,
+    pub time_access: __time64_t,
+    pub time_write: __time64_t,
+    pub size: ::std::os::raw::c_longlong,
+    pub name: [::std::os::raw::c_char; 260usize],
+}
+#[test]
+fn bindgen_test_layout___finddata64_t() {
+    assert_eq!(
+        ::std::mem::size_of::<__finddata64_t>(),
+        304usize,
+        concat!("Size of: ", stringify!(__finddata64_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<__finddata64_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(__finddata64_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).time_create as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).time_access as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).time_write as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).size as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<__finddata64_t>())).name as *const _ as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__finddata64_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _wfinddata32_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time32_t,
+    pub time_access: __time32_t,
+    pub time_write: __time32_t,
+    pub size: _fsize_t,
+    pub name: [wchar_t; 260usize],
+}
+#[test]
+fn bindgen_test_layout__wfinddata32_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_wfinddata32_t>(),
+        540usize,
+        concat!("Size of: ", stringify!(_wfinddata32_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_wfinddata32_t>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_wfinddata32_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).time_create as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).time_access as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).time_write as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).size as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32_t>())).name as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _wfinddata32i64_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time32_t,
+    pub time_access: __time32_t,
+    pub time_write: __time32_t,
+    pub size: ::std::os::raw::c_longlong,
+    pub name: [wchar_t; 260usize],
+}
+#[test]
+fn bindgen_test_layout__wfinddata32i64_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_wfinddata32i64_t>(),
+        544usize,
+        concat!("Size of: ", stringify!(_wfinddata32i64_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_wfinddata32i64_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_wfinddata32i64_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).time_create as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).time_access as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).time_write as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).size as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata32i64_t>())).name as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata32i64_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _wfinddata64i32_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time64_t,
+    pub time_access: __time64_t,
+    pub time_write: __time64_t,
+    pub size: _fsize_t,
+    pub name: [wchar_t; 260usize],
+}
+#[test]
+fn bindgen_test_layout__wfinddata64i32_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_wfinddata64i32_t>(),
+        560usize,
+        concat!("Size of: ", stringify!(_wfinddata64i32_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_wfinddata64i32_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_wfinddata64i32_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).time_create as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).time_access as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).time_write as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).size as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64i32_t>())).name as *const _ as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64i32_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _wfinddata64_t {
+    pub attrib: ::std::os::raw::c_uint,
+    pub time_create: __time64_t,
+    pub time_access: __time64_t,
+    pub time_write: __time64_t,
+    pub size: ::std::os::raw::c_longlong,
+    pub name: [wchar_t; 260usize],
+}
+#[test]
+fn bindgen_test_layout__wfinddata64_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_wfinddata64_t>(),
+        560usize,
+        concat!("Size of: ", stringify!(_wfinddata64_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_wfinddata64_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_wfinddata64_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).attrib as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(attrib)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).time_create as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(time_create)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).time_access as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(time_access)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).time_write as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(time_write)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).size as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(size)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_wfinddata64_t>())).name as *const _ as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_wfinddata64_t),
+            "::",
+            stringify!(name)
+        )
+    );
+}
+pub type _off_t = ::std::os::raw::c_long;
+pub type off32_t = ::std::os::raw::c_long;
+pub type _off64_t = ::std::os::raw::c_longlong;
+pub type off64_t = ::std::os::raw::c_longlong;
+pub type off_t = off32_t;
+extern "C" {
+    pub fn _access(
+        _Filename: *const ::std::os::raw::c_char,
+        _AccessMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _access_s(
+        _Filename: *const ::std::os::raw::c_char,
+        _AccessMode: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _chmod(
+        _Filename: *const ::std::os::raw::c_char,
+        _Mode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _chsize(
+        _FileHandle: ::std::os::raw::c_int,
+        _Size: ::std::os::raw::c_long,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _chsize_s(
+        _FileHandle: ::std::os::raw::c_int,
+        _Size: ::std::os::raw::c_longlong,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _close(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _commit(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _creat(
+        _Filename: *const ::std::os::raw::c_char,
+        _PermissionMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _dup(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _dup2(
+        _FileHandleSrc: ::std::os::raw::c_int,
+        _FileHandleDst: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _eof(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _filelength(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn _findfirst32(
+        _Filename: *const ::std::os::raw::c_char,
+        _FindData: *mut _finddata32_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _findnext32(_FindHandle: isize, _FindData: *mut _finddata32_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _findclose(_FindHandle: isize) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _isatty(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _locking(
+        _FileHandle: ::std::os::raw::c_int,
+        _LockMode: ::std::os::raw::c_int,
+        _NumOfBytes: ::std::os::raw::c_long,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _lseek(
+        _FileHandle: ::std::os::raw::c_int,
+        _Offset: ::std::os::raw::c_long,
+        _Origin: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn lseek64(
+        fd: ::std::os::raw::c_int,
+        offset: _off64_t,
+        whence: ::std::os::raw::c_int,
+    ) -> _off64_t;
+}
+extern "C" {
+    pub fn _mktemp(_TemplateName: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn _mktemp_s(_TemplateName: *mut ::std::os::raw::c_char, _Size: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _pipe(
+        _PtHandles: *mut ::std::os::raw::c_int,
+        _PipeSize: ::std::os::raw::c_uint,
+        _TextMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _read(
+        _FileHandle: ::std::os::raw::c_int,
+        _DstBuf: *mut ::std::os::raw::c_void,
+        _MaxCharCount: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn remove(_Filename: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn rename(
+        _OldFilename: *const ::std::os::raw::c_char,
+        _NewFilename: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _unlink(_Filename: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn unlink(_Filename: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _setmode(
+        _FileHandle: ::std::os::raw::c_int,
+        _Mode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _tell(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn _umask(_Mode: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _umask_s(
+        _NewMode: ::std::os::raw::c_int,
+        _OldMode: *mut ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _write(
+        _FileHandle: ::std::os::raw::c_int,
+        _Buf: *const ::std::os::raw::c_void,
+        _MaxCharCount: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _filelengthi64(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn _findfirst32i64(
+        _Filename: *const ::std::os::raw::c_char,
+        _FindData: *mut _finddata32i64_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _findfirst64(
+        _Filename: *const ::std::os::raw::c_char,
+        _FindData: *mut __finddata64_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _findfirst64i32(
+        _Filename: *const ::std::os::raw::c_char,
+        _FindData: *mut _finddata64i32_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _findnext32i64(
+        _FindHandle: isize,
+        _FindData: *mut _finddata32i64_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _findnext64(_FindHandle: isize, _FindData: *mut __finddata64_t)
+        -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _findnext64i32(
+        _FindHandle: isize,
+        _FindData: *mut _finddata64i32_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _lseeki64(
+        _FileHandle: ::std::os::raw::c_int,
+        _Offset: ::std::os::raw::c_longlong,
+        _Origin: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn _telli64(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn chdir(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getcwd(
+        arg1: *mut ::std::os::raw::c_char,
+        arg2: ::std::os::raw::c_int,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn mkdir(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn mktemp(arg1: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn rmdir(arg1: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn chmod(
+        arg1: *const ::std::os::raw::c_char,
+        arg2: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _sopen_s(
+        _FileHandle: *mut ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _OpenFlag: ::std::os::raw::c_int,
+        _ShareFlag: ::std::os::raw::c_int,
+        _PermissionMode: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _open(
+        _Filename: *const ::std::os::raw::c_char,
+        _OpenFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _sopen(
+        _Filename: *const ::std::os::raw::c_char,
+        _OpenFlag: ::std::os::raw::c_int,
+        _ShareFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _waccess(
+        _Filename: *const wchar_t,
+        _AccessMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _waccess_s(_Filename: *const wchar_t, _AccessMode: ::std::os::raw::c_int) -> errno_t;
+}
+extern "C" {
+    pub fn _wchmod(
+        _Filename: *const wchar_t,
+        _Mode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wcreat(
+        _Filename: *const wchar_t,
+        _PermissionMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wfindfirst32(_Filename: *const wchar_t, _FindData: *mut _wfinddata32_t) -> isize;
+}
+extern "C" {
+    pub fn _wfindnext32(
+        _FindHandle: isize,
+        _FindData: *mut _wfinddata32_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wunlink(_Filename: *const wchar_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wrename(
+        _OldFilename: *const wchar_t,
+        _NewFilename: *const wchar_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wmktemp(_TemplateName: *mut wchar_t) -> *mut wchar_t;
+}
+extern "C" {
+    pub fn _wmktemp_s(_TemplateName: *mut wchar_t, _SizeInWords: size_t) -> errno_t;
+}
+extern "C" {
+    pub fn _wfindfirst32i64(_Filename: *const wchar_t, _FindData: *mut _wfinddata32i64_t) -> isize;
+}
+extern "C" {
+    pub fn _wfindfirst64i32(_Filename: *const wchar_t, _FindData: *mut _wfinddata64i32_t) -> isize;
+}
+extern "C" {
+    pub fn _wfindfirst64(_Filename: *const wchar_t, _FindData: *mut _wfinddata64_t) -> isize;
+}
+extern "C" {
+    pub fn _wfindnext32i64(
+        _FindHandle: isize,
+        _FindData: *mut _wfinddata32i64_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wfindnext64i32(
+        _FindHandle: isize,
+        _FindData: *mut _wfinddata64i32_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wfindnext64(
+        _FindHandle: isize,
+        _FindData: *mut _wfinddata64_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wsopen_s(
+        _FileHandle: *mut ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _OpenFlag: ::std::os::raw::c_int,
+        _ShareFlag: ::std::os::raw::c_int,
+        _PermissionFlag: ::std::os::raw::c_int,
+    ) -> errno_t;
+}
+extern "C" {
+    pub fn _wopen(
+        _Filename: *const wchar_t,
+        _OpenFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _wsopen(
+        _Filename: *const wchar_t,
+        _OpenFlag: ::std::os::raw::c_int,
+        _ShareFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __lock_fhandle(_Filehandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _unlock_fhandle(_Filehandle: ::std::os::raw::c_int);
+}
+extern "C" {
+    pub fn _get_osfhandle(_FileHandle: ::std::os::raw::c_int) -> isize;
+}
+extern "C" {
+    pub fn _open_osfhandle(
+        _OSFileHandle: isize,
+        _Flags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn access(
+        _Filename: *const ::std::os::raw::c_char,
+        _AccessMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn chsize(
+        _FileHandle: ::std::os::raw::c_int,
+        _Size: ::std::os::raw::c_long,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn close(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn creat(
+        _Filename: *const ::std::os::raw::c_char,
+        _PermissionMode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dup(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dup2(
+        _FileHandleSrc: ::std::os::raw::c_int,
+        _FileHandleDst: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn eof(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn filelength(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn isatty(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn locking(
+        _FileHandle: ::std::os::raw::c_int,
+        _LockMode: ::std::os::raw::c_int,
+        _NumOfBytes: ::std::os::raw::c_long,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn lseek(
+        _FileHandle: ::std::os::raw::c_int,
+        _Offset: ::std::os::raw::c_long,
+        _Origin: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn open(
+        _Filename: *const ::std::os::raw::c_char,
+        _OpenFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn read(
+        _FileHandle: ::std::os::raw::c_int,
+        _DstBuf: *mut ::std::os::raw::c_void,
+        _MaxCharCount: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn setmode(
+        _FileHandle: ::std::os::raw::c_int,
+        _Mode: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn sopen(
+        _Filename: *const ::std::os::raw::c_char,
+        _OpenFlag: ::std::os::raw::c_int,
+        _ShareFlag: ::std::os::raw::c_int,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn tell(_FileHandle: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn umask(_Mode: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn write(
+        _Filehandle: ::std::os::raw::c_int,
+        _Buf: *const ::std::os::raw::c_void,
+        _MaxCharCount: ::std::os::raw::c_uint,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __p__acmdln() -> *mut *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn __p__wcmdln() -> *mut *mut wchar_t;
+}
+pub type _PVFV = ::std::option::Option<unsafe extern "C" fn()>;
+pub type _PIFV = ::std::option::Option<unsafe extern "C" fn() -> ::std::os::raw::c_int>;
+pub type _PVFI = ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _onexit_table_t {
+    pub _first: *mut _PVFV,
+    pub _last: *mut _PVFV,
+    pub _end: *mut _PVFV,
+}
+#[test]
+fn bindgen_test_layout__onexit_table_t() {
+    assert_eq!(
+        ::std::mem::size_of::<_onexit_table_t>(),
+        24usize,
+        concat!("Size of: ", stringify!(_onexit_table_t))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<_onexit_table_t>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_onexit_table_t))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_onexit_table_t>()))._first as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_onexit_table_t),
+            "::",
+            stringify!(_first)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_onexit_table_t>()))._last as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_onexit_table_t),
+            "::",
+            stringify!(_last)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<_onexit_table_t>()))._end as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_onexit_table_t),
+            "::",
+            stringify!(_end)
+        )
+    );
+}
+extern "C" {
+    pub fn _initialize_onexit_table(arg1: *mut _onexit_table_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _register_onexit_function(
+        arg1: *mut _onexit_table_t,
+        arg2: _onexit_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _execute_onexit_table(arg1: *mut _onexit_table_t) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _crt_atexit(func: _PVFV) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _crt_at_quick_exit(func: _PVFV) -> ::std::os::raw::c_int;
+}
+pub type _ino_t = ::std::os::raw::c_ushort;
+pub type ino_t = ::std::os::raw::c_ushort;
+pub type _dev_t = ::std::os::raw::c_uint;
+pub type dev_t = ::std::os::raw::c_uint;
+pub type _pid_t = ::std::os::raw::c_longlong;
+pub type pid_t = _pid_t;
+pub type _mode_t = ::std::os::raw::c_ushort;
+pub type mode_t = _mode_t;
+pub type useconds_t = ::std::os::raw::c_uint;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct timespec {
+    pub tv_sec: time_t,
+    pub tv_nsec: ::std::os::raw::c_long,
+}
+#[test]
+fn bindgen_test_layout_timespec() {
+    assert_eq!(
+        ::std::mem::size_of::<timespec>(),
+        16usize,
+        concat!("Size of: ", stringify!(timespec))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<timespec>(),
+        8usize,
+        concat!("Alignment of ", stringify!(timespec))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<timespec>())).tv_sec as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(timespec),
+            "::",
+            stringify!(tv_sec)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<timespec>())).tv_nsec as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(timespec),
+            "::",
+            stringify!(tv_nsec)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct itimerspec {
+    pub it_interval: timespec,
+    pub it_value: timespec,
+}
+#[test]
+fn bindgen_test_layout_itimerspec() {
+    assert_eq!(
+        ::std::mem::size_of::<itimerspec>(),
+        32usize,
+        concat!("Size of: ", stringify!(itimerspec))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<itimerspec>(),
+        8usize,
+        concat!("Alignment of ", stringify!(itimerspec))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<itimerspec>())).it_interval as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(itimerspec),
+            "::",
+            stringify!(it_interval)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<itimerspec>())).it_value as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(itimerspec),
+            "::",
+            stringify!(it_value)
+        )
+    );
+}
+pub type _sigset_t = ::std::os::raw::c_ulonglong;
+pub type _beginthread_proc_type =
+    ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>;
+pub type _beginthreadex_proc_type = ::std::option::Option<
+    unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_uint,
+>;
+extern "C" {
+    pub fn _beginthread(
+        _StartAddress: _beginthread_proc_type,
+        _StackSize: ::std::os::raw::c_uint,
+        _ArgList: *mut ::std::os::raw::c_void,
+    ) -> usize;
+}
+extern "C" {
+    pub fn _endthread();
+}
+extern "C" {
+    pub fn _beginthreadex(
+        _Security: *mut ::std::os::raw::c_void,
+        _StackSize: ::std::os::raw::c_uint,
+        _StartAddress: _beginthreadex_proc_type,
+        _ArgList: *mut ::std::os::raw::c_void,
+        _InitFlag: ::std::os::raw::c_uint,
+        _ThrdAddr: *mut ::std::os::raw::c_uint,
+    ) -> usize;
+}
+extern "C" {
+    pub fn _endthreadex(_Retval: ::std::os::raw::c_uint);
+}
+pub type _tls_callback_type = ::std::option::Option<
+    unsafe extern "C" fn(
+        arg1: *mut ::std::os::raw::c_void,
+        arg2: ::std::os::raw::c_ulong,
+        arg3: *mut ::std::os::raw::c_void,
+    ),
+>;
+extern "C" {
+    pub fn _register_thread_local_exe_atexit_callback(callback: _tls_callback_type);
+}
+extern "C" {
+    pub fn _cexit();
+}
+extern "C" {
+    pub fn _c_exit();
+}
+extern "C" {
+    pub fn _getpid() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _cwait(
+        _TermStat: *mut ::std::os::raw::c_int,
+        _ProcHandle: isize,
+        _Action: ::std::os::raw::c_int,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execl(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execle(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execlp(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execlpe(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execv(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execve(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+        _Env: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execvp(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _execvpe(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+        _Env: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnl(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnle(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnlp(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnlpe(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnv(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnve(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+        _Env: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnvp(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _spawnvpe(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *const ::std::os::raw::c_char,
+        _Env: *const *const ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wexecl(_Filename: *const wchar_t, _ArgList: *const wchar_t, ...) -> isize;
+}
+extern "C" {
+    pub fn _wexecle(_Filename: *const wchar_t, _ArgList: *const wchar_t, ...) -> isize;
+}
+extern "C" {
+    pub fn _wexeclp(_Filename: *const wchar_t, _ArgList: *const wchar_t, ...) -> isize;
+}
+extern "C" {
+    pub fn _wexeclpe(_Filename: *const wchar_t, _ArgList: *const wchar_t, ...) -> isize;
+}
+extern "C" {
+    pub fn _wexecv(_Filename: *const wchar_t, _ArgList: *const *const wchar_t) -> isize;
+}
+extern "C" {
+    pub fn _wexecve(
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+        _Env: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wexecvp(_Filename: *const wchar_t, _ArgList: *const *const wchar_t) -> isize;
+}
+extern "C" {
+    pub fn _wexecvpe(
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+        _Env: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnl(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const wchar_t,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnle(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const wchar_t,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnlp(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const wchar_t,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnlpe(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const wchar_t,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnv(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnve(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+        _Env: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnvp(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _wspawnvpe(
+        _Mode: ::std::os::raw::c_int,
+        _Filename: *const wchar_t,
+        _ArgList: *const *const wchar_t,
+        _Env: *const *const wchar_t,
+    ) -> isize;
+}
+extern "C" {
+    pub fn _loaddll(_Filename: *mut ::std::os::raw::c_char) -> isize;
+}
+extern "C" {
+    pub fn _unloaddll(_Handle: isize) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn _getdllprocaddr(
+        _Handle: isize,
+        _ProcedureName: *mut ::std::os::raw::c_char,
+        _Ordinal: isize,
+    ) -> ::std::option::Option<
+        unsafe extern "C" fn(
+            _Handle: isize,
+            _ProcedureName: *mut ::std::os::raw::c_char,
+            _Ordinal: isize,
+        ) -> ::std::os::raw::c_int,
+    >;
+}
+extern "C" {
+    pub fn getpid() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn cwait(
+        _TermStat: *mut ::std::os::raw::c_int,
+        _ProcHandle: isize,
+        _Action: ::std::os::raw::c_int,
+    ) -> isize;
+}
+extern "C" {
+    pub fn execl(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execle(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execlp(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execlpe(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn spawnl(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnle(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnlp(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnlpe(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const ::std::os::raw::c_char,
+        ...
+    ) -> isize;
+}
+extern "C" {
+    pub fn execv(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execve(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+        _Env: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execvp(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn execvpe(
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+        _Env: *const *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn spawnv(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnve(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+        _Env: *const *mut ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnvp(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+    ) -> isize;
+}
+extern "C" {
+    pub fn spawnvpe(
+        arg1: ::std::os::raw::c_int,
+        _Filename: *const ::std::os::raw::c_char,
+        _ArgList: *const *mut ::std::os::raw::c_char,
+        _Env: *const *mut ::std::os::raw::c_char,
+    ) -> isize;
 }
 pub type __builtin_va_list = *mut ::std::os::raw::c_char;
 #[repr(C)]
